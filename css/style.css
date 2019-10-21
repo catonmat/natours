@@ -39,25 +39,21 @@ body {
   background-position: top;
   /* Sets the top of the image to aleways be the page top (bottom, center) */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4.0rem;
-  left: 4.0rem;
-  height: 3.5rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__logo:hover {
-  animation: rotateFull 1s linear; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4.0rem;
+    left: 4.0rem;
+    height: 3.5rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__logo:hover {
+    animation: rotateFull 1s linear; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -65,73 +61,64 @@ body {
   margin-bottom: 1rem;
   backface-visibility: hidden;
   /* fixes glitches in child component (.btn) that has animations */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6.0rem;
+    font-weight: 700;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    /*animation-delay: 3s;*/
+    /*animation-iteration-count: 2;*/ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2.0rem;
+    font-weight: 400;
+    letter-spacing: 1.6rem;
+    animation: moveInRight 0.8s ease-out; }
 
-.heading-primary--main {
-  display: block;
-  font-size: 6.0rem;
-  font-weight: 700;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-out;
-  /*animation-delay: 3s;*/
-  /*animation-iteration-count: 2;*/ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2.0rem;
-  font-weight: 400;
-  letter-spacing: 1.6rem;
-  animation: moveInRight 0.8s ease-out; }
-
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4.0rem;
-  display: inline-block;
-  border-radius: 10.0rem;
-  transition: all 0.25s;
-  position: relative;
-  font-size: 1.2rem; }
-
-.btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-/* Treated as child of parent */
-.btn::after {
-  content: "";
-  display: inline-block;
-  /* because parent is inline block */
-  width: 100%;
-  height: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn--white:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-.btn--animated {
-  animation: moveInBottom .5s ease-out .5s;
-  /* animation-name, animation-time, animation-function, animation-delay*/
-  animation-fill-mode: backwards; }
+.btn {
+  /* Treated as child of parent */ }
+  .btn:link, .btn:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4.0rem;
+    display: inline-block;
+    border-radius: 10.0rem;
+    transition: all 0.25s;
+    position: relative;
+    font-size: 1.2rem; }
+  .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    /* because parent is inline block */
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+  .btn--white:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .5s;
+    /* animation-name, animation-time, animation-function, animation-delay*/
+    animation-fill-mode: backwards; }
 
 @keyframes moveInLeft {
   0% {
